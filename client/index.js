@@ -1,6 +1,21 @@
 /*global $*/
 
-alert("hello there")
+alert("hello there");
+//  var playerName;
+// $.ajax({
+//   url: 'https://randomuser.me/api/',
+//   dataType: 'json',
+  
+//   success: function(data) {
+//     console.log(data);
+// 	playerName = data;
+
+//   }
+// });
+
+
+
+      
 
 
 $("#buttonG").click(function() {
@@ -19,8 +34,30 @@ $("#buttonG").click(function() {
 	var strength = getRandomInt(35,85);
 	var vert = getRandomInt(100,60);
 
+	var playerName;
+	var firstName;
+	var lastName;
+	$.ajax({
+		url: 'https://randomuser.me/api/?gender=male&nat=us',
+		dataType: 'json',
+  
+	success: function(data) {
+    	console.log(data);
+	playerName = data;
+	// console.log(playerName.results[0].name.first);
+	firstName = playerName.results[0].name.first;
+	lastName = playerName.results[0].name.last;
 	
-	$("#outputG").append("<br/> <br/> Interior Shooting " + shootingIn, "<br/> Perimeter Shooting " + shootingOut + "<br/> Ball Handling " + handling + "<br/> Passing " + passing +  "<br/> Steal " + steal + "<br/> Block " + block + "<br/> Speed " + speed + "<br/> Strength " + strength + "<br/> Vert " + vert);
+	
+		$("#outputG").append( firstName + " " + lastName + "<br/> <br/> Interior Shooting " + shootingIn, "<br/> Perimeter Shooting " + shootingOut + "<br/> Ball Handling " + handling + "<br/> Passing " + passing +  "<br/> Steal " + steal + "<br/> Block " + block + "<br/> Speed " + speed + "<br/> Strength " + strength + "<br/> Vert " + vert + "<br/><br/>");
+
+
+  }
+});
+
+      
+	
+	// $("#outputG").append( "<br/> <br/> Interior Shooting " + shootingIn, "<br/> Perimeter Shooting " + shootingOut + "<br/> Ball Handling " + handling + "<br/> Passing " + passing +  "<br/> Steal " + steal + "<br/> Block " + block + "<br/> Speed " + speed + "<br/> Strength " + strength + "<br/> Vert " + vert);
 });
 
 
@@ -41,6 +78,29 @@ $("#buttonF").click(function() {
 	var strength = getRandomInt(35,85);
 	var vert = getRandomInt(100,60);
 
-	$("#outputF").append("<br/><br/> Interior Shooting " + shootingIn, "<br/> Perimeter Shooting " + shootingOut + "<br/> Ball Handling " + handling + "<br/> Passing " + passing +  "<br/> Steal " + steal + "<br/> Block " + block + "<br/> Speed " + speed + "<br/> Strength " + strength + "<br/> Vert " + vert);
+	var playerName;
+	var firstName;
+	var lastName;
+	$.ajax({
+		url: 'https://randomuser.me/api/?gender=male&nat=us',
+		dataType: 'json',
+  
+	success: function(data) {
+    	console.log(data);
+	playerName = data;
+	// console.log(playerName.results[0].name.first);
+	firstName = playerName.results[0].name.first;
+	lastName = playerName.results[0].name.last;
+	
+	
+		$("#outputF").append( firstName + " " + lastName + "<br/> <br/> Interior Shooting " + shootingIn, "<br/> Perimeter Shooting " + shootingOut + "<br/> Ball Handling " + handling + "<br/> Passing " + passing +  "<br/> Steal " + steal + "<br/> Block " + block + "<br/> Speed " + speed + "<br/> Strength " + strength + "<br/> Vert " + vert + "<br/><br/>");
+
+
+  }
+});
+
+
+
+	// $("#outputF").append("<br/><br/> Interior Shooting " + shootingIn, "<br/> Perimeter Shooting " + shootingOut + "<br/> Ball Handling " + handling + "<br/> Passing " + passing +  "<br/> Steal " + steal + "<br/> Block " + block + "<br/> Speed " + speed + "<br/> Strength " + strength + "<br/> Vert " + vert);
 });
 
